@@ -3,6 +3,8 @@ package main
 import (
 	"franklin/models"
 
+	resources "franklin/resources"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,5 +17,11 @@ func main() {
 		c.Next()
 	})
 
-	r.Run() // served on 0.0.0.0:8080
+	r.GET("/feeds", resources.GetFeeds)
+	r.PATCH("/feeds/:id", resources.PatchFeed)
+	r.GET("/news_items", resources.GetNewsItems)
+	r.GET("/news_items/:guid_md5", resources.GetNewsItem)
+	r.POST("/news_items", resources.PostNewsItem)
+
+	r.Run()
 }
