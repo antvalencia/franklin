@@ -22,5 +22,5 @@ But init env vars found therein.
 ---
 
 ## Run a test to add some news items
-From test:
+From **test** directory:
 > go run add_news_items.go
